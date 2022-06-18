@@ -17,7 +17,7 @@ import { CoreConfig } from '@core/types';
 export const coreConfig: CoreConfig = {
   app: {
     appName     : 'CodeEpic',                                        // App Name
-    appTitle    : 'CodeEpic - Middleware', // App Title
+    appTitle    : 'CodeEpic - Sandra Middleware', // App Title
     appLogoImage: 'assets/images/logo/logo.svg',                  // App Logo
     appLanguage : 'en',                                           // App Default Language (en, fr, de, pt etc..)
   },
