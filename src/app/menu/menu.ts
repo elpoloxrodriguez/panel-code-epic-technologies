@@ -5,47 +5,42 @@
   export const menu: CoreMenu[] = [
     // Dashboard
     {
-      id: 'home',
-      nombre: 'Escritorio',
+      id: 'dashboard/home',
+      nombre: 'Hello',
       icono: 'home',
       type: 'item',
       url: 'home',
     },
-  
-    // Others
-    // {
-    //   id: 'invoice',
-    //   nombre: 'Redes',
-    //   translate: 'MENU.APPS.INVOICE.COLLAPSIBLE',
-    //   type: 'collapsible',
-    //   icono: 'slack',
-    //   children: [
-    //     {
-    //       id: 'invoice-list',
-    //       nombre: 'Comunicaciones',
-    //       translate: 'MENU.APPS.INVOICE.LIST',
-    //       type: 'item',
-    //       icono: 'circle',
-    //       url: 'apps/invoice/list'
-    //     },
-    //     {
-    //       id: 'invoicePreview',
-    //       nombre: 'Conexiones',
-    //       translate: 'MENU.APPS.INVOICE.PREVIEW',
-    //       type: 'item',
-    //       icono: 'circle',
-    //       url: 'apps/invoice/preview'
-    //     },
-    //     {
-    //       id: 'invoiceEdit',
-    //       nombre: 'Monitoreo',
-    //       translate: 'MENU.APPS.INVOICE.EDIT',
-    //       type: 'item',
-    //       icono: 'circle',
-    //       url: 'apps/invoice/edit'
-    //     }
-    //   ]
-    // },
+    {
+      id: 'invoice',
+      nombre: 'Redes',
+      type: 'collapsible',
+      icono: 'slack',
+      title: 'Redes',
+      children: [
+        {
+          id: 'invoice-list',
+          nombre: 'Comunicaciones',
+          type: 'item',
+          icono: 'circle',
+          url: 'dashboard/redes'
+        },
+        {
+          id: 'invoicePreview',
+          nombre: 'Conexiones',
+          type: 'item',
+          icono: 'circle',
+          url: 'apps/invoice/preview'
+        },
+        {
+          id: 'invoiceEdit',
+          nombre: 'Monitoreo',
+          type: 'item',
+          icono: 'circle',
+          url: 'apps/invoice/edit'
+        }
+      ]
+    },
     // {
     //   id: 'invoice',
     //   nombre: 'Herramienta',
@@ -162,3 +157,9 @@
     // },
   ];
   
+
+  export class Menu {
+    constructor(){
+      console.log('Cargando el Menu')
+    }
+  }

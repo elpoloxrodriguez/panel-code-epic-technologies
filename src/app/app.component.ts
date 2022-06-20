@@ -14,11 +14,11 @@ import { CoreLoadingScreenService } from '@core/services/loading-screen.service'
 import { CoreTranslationService } from '@core/services/translation.service';
 
 import { menu } from 'app/menu/menu';
-import { locale as menuEnglish } from 'app/menu/i18n/en';
-import { locale as menuFrench } from 'app/menu/i18n/fr';
-import { locale as menuGerman } from 'app/menu/i18n/de';
-import { locale as menuPortuguese } from 'app/menu/i18n/pt';
-import { LoginService } from '../../src/app/service/seguridad/login.service';
+import { locale as en } from 'app/menu/i18n/en';
+import { locale as fr } from 'app/menu/i18n/fr';
+import { locale as de } from 'app/menu/i18n/de';
+import { locale as pt } from 'app/menu/i18n/pt';
+import { LoginService } from '../@core/services/seguridad/login.service';
 
 @Component({
   selector: 'app-root',
@@ -48,19 +48,17 @@ export class AppComponent implements OnInit, OnDestroy {
    * @param {CoreTranslationService} _coreTranslationService
    * @param {TranslateService} _translateService
    */
-  constructor(
+  constructor( 
     @Inject(DOCUMENT) private document: any,
+    private _elementRef: ElementRef,
     private _title: Title,
     private _renderer: Renderer2,
-    private _elementRef: ElementRef,
     public _coreConfigService: CoreConfigService,
-    private _coreSidebarService: CoreSidebarService,
     private _coreLoadingScreenService: CoreLoadingScreenService,
     private _coreMenuService: CoreMenuService,
     private _coreTranslationService: CoreTranslationService,
     private _translateService: TranslateService,
-    private loginService: LoginService
-  ) {
+    private _coreSidebarService: CoreSidebarService  ) {
 
 
   }
@@ -72,12 +70,6 @@ export class AppComponent implements OnInit, OnDestroy {
    * On init
    */
   ngOnInit() {
-
-    this.menu = menu
-    
-    // Register the menu to the menu service
-    this._coreMenuService.register('main', this.menu);
-
     // Set the main menu as our current menu
     this._coreMenuService.setCurrentMenu('main');
 
@@ -88,19 +80,20 @@ export class AppComponent implements OnInit, OnDestroy {
     this._translateService.setDefaultLang('en');
 
     // Set the translations for the menu
-    this._coreTranslationService.translate(menuEnglish, menuFrench, menuGerman, menuPortuguese);
+    this._coreTranslationService.translate(en, fr, de, pt);
 
-    // Set the private defaults
     this._unsubscribeAll = new Subject();
+
+
 
     // Init wave effect (Ripple effect)
     Waves.init();
 
-    // Subscribe to config changes
+
     this._coreConfigService.config.pipe(takeUntil(this._unsubscribeAll)).subscribe(config => {
       this.coreConfig = config;
-
-      // Set application default language.
+ 
+    // Set application default language.
 
       // Change application language? Read the ngxTranslate Fix
 
@@ -135,10 +128,6 @@ export class AppComponent implements OnInit, OnDestroy {
         this._translateService.setDefaultLang(appLanguage);
       });
 
-      /**
-       * !Fix: ngxTranslate
-       * ----------------------------------------------------------------------------------------------------
-       */
 
       // Layout
       //--------
@@ -240,18 +229,18 @@ export class AppComponent implements OnInit, OnDestroy {
       }
     });
 
-    // Set the application page title
     this._title.setTitle(this.coreConfig.app.appTitle);
-
 
   }
 
-//  funcion contruccion menu 
-
- contruccionMenu() {
-          // Get the application main menu  
-}
-
+    /**
+   * Toggle sidebar open
+   *
+   * @param key
+   */
+  toggleSidebar(key): void {
+    this._coreSidebarService.getSidebarRegistry(key).toggleOpen();
+  }
 
   /**
    * On destroy
@@ -265,12 +254,5 @@ export class AppComponent implements OnInit, OnDestroy {
   // Public methods
   // -----------------------------------------------------------------------------------------------------
 
-  /**
-   * Toggle sidebar open
-   *
-   * @param key
-   */
-  toggleSidebar(key): void {
-    this._coreSidebarService.getSidebarRegistry(key).toggleOpen();
-  }
+
 }

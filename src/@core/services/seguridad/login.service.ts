@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import Swal from 'sweetalert2';
 
 
 export interface IUsuario{
@@ -70,8 +71,28 @@ export class LoginService {
   }
 
   logout(){
-    this.router.navigate(['login']);
-    sessionStorage.clear();
+    Swal.fire({
+      title: 'Desea cerrar sesión?',
+      text: "Gracias por su tiempo!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, cerrar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        
+        Swal.fire(
+          'Hasta la próxima!',
+          'Te esperamos',
+          'success'
+        )
+        this.router.navigate(['login']);
+        sessionStorage.clear();
+        localStorage.clear();
+      }
+    })
   }
 
   protected getUserDecrypt() : any {    
@@ -98,8 +119,22 @@ export class LoginService {
   }
   
   obtenerMenu() : any {
+    var i = 0
     return  this.Aplicacion.Rol.Menu.map(e => {
-      e.type = 'item'
+      e.id = e.url
+      e.type = e.clase
+      e.title = e.descripcion
+      if(  e.SubMenu != undefined ) {
+        e.children = e.SubMenu.map(el => {
+          el.id =   el.url.replace('/', '-')
+          el.title = el.descripcion
+          el.type = 'item'
+          el.url =  el.url
+          return el
+        }) 
+        e.url = ''
+      }
+      
       return e
     }) 
     // return this.Aplicacion.Rol.Menu

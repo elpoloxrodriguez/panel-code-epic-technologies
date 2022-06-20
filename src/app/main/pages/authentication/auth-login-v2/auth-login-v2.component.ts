@@ -5,7 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { CoreConfigService } from '@core/services/config.service';
-import { IToken, LoginService } from '../../../../service/seguridad/login.service';
+import { IToken, LoginService } from '@core/services/seguridad/login.service';
 import Swal from 'sweetalert2';
 
 
@@ -106,7 +106,8 @@ export class AuthLoginV2Component implements OnInit {
    */
   ngOnInit(): void {
     if (sessionStorage.getItem("token") != undefined) {
-      this._router.navigate(['/home']);
+      this._router.navigate(['/dashboard', 'home'])
+      return
    }
     this.loginForm = this._formBuilder.group({
       email: ['', [Validators.required]],
@@ -136,8 +137,8 @@ export class AuthLoginV2Component implements OnInit {
           showConfirmButton: false,
           timer: 1500
         })
-          this._router.navigate(['/home']);
-        this.loading = false;
+        this._router.navigate(['/dashboard', 'home']);
+        return
       },
       (error) => {
         this.loading = false;

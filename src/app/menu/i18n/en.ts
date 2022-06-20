@@ -14,8 +14,8 @@ export const locale = {
         CHAT: 'Chat',
         TODO: 'Todo',
         CALENDAR: 'Calendar',
-        INVOICE: {
-          COLLAPSIBLE: 'Invoice',
+        REDES: {
+          COLLAPSIBLE: 'Redes',
           LIST: 'List',
           PREVIEW: 'Preview',
           EDIT: 'Edit',

@@ -17,7 +17,10 @@ import { coreConfig } from 'app/app-config';
 
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
-import { SampleModule } from 'app/main/sample/sample.module';
+import { DashboardModule } from 'app/main/pages/dashboard/dashboard.module';
+import { ContentHeaderModule } from './layout/components/content-header/content-header.module';
+import { ContentComponent } from './layout/components/content/content.component';
+import { ContentHeaderComponent } from './layout/components/content-header/content-header.component';
 
 const appRoutes: Routes = [
   {
@@ -25,9 +28,8 @@ const appRoutes: Routes = [
     loadChildren: () => import('./main/pages/pages.module').then(m => m.PagesModule),
   },
   {
-    path: 'home',
-    redirectTo: '/home',
-    pathMatch: 'full'
+    path: 'dashboard',
+    loadChildren: () => import('./main/pages/dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
     path: '**',
@@ -50,7 +52,7 @@ const appRoutes: Routes = [
 
     //NgBootstrap
     NgbModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({}),
 
     // Core modules
     CoreModule.forRoot(coreConfig),
@@ -61,7 +63,8 @@ const appRoutes: Routes = [
 
     // App modules
     LayoutModule,
-    SampleModule
+    DashboardModule,
+    ContentHeaderModule,
   ],
 
   bootstrap: [AppComponent]

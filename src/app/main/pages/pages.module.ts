@@ -16,7 +16,7 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
   imports: [
     CommonModule,
     CoreCommonModule,
-    ContentHeaderModule,
+    
     NgbModule,
     NgSelectModule,
     FormsModule,

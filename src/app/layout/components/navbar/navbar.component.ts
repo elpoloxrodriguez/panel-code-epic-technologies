@@ -13,10 +13,9 @@ import { CoreMediaService } from '@core/services/media.service';
 
 import { User } from 'app/auth/models';
 
-import { coreConfig } from 'app/app-config';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { LoginService } from '../../../service/seguridad/login.service';
+import { LoginService } from '@core/services/seguridad/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -168,27 +167,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
    * Logout method
    */
   logout() {
-    Swal.fire({
-      title: 'Desea Cerrar Sesión?',
-      text: "Gracias por su tiempo!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, Cerrar Sesión!',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.loginService.logout()
-        Swal.fire(
-          'Felicidades!',
-          'Hasta pronto.',
-          'success'
-        )
-      }
-    })
-    // this._authenticationService.logout();
-    // this._router.navigate(['/pages/authentication/login-v2']);
+    this.loginService.logout()
   }
 
   // Lifecycle Hooks
