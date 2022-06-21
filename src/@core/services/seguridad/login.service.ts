@@ -128,13 +128,12 @@ export class LoginService {
         e.children = e.SubMenu.map(el => {
           el.id =   el.url.replace('/', '-')
           el.title = el.descripcion
-          el.type = 'item'
+          el.type = el.clase
           el.url =  el.url
           return el
         }) 
         e.url = ''
       }
-      
       return e
     }) 
     // return this.Aplicacion.Rol.Menu

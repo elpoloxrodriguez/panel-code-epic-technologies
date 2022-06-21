@@ -14,7 +14,6 @@ import { CoreMediaService } from '@core/services/media.service';
 import { User } from 'app/auth/models';
 
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
 import { LoginService } from '@core/services/seguridad/login.service';
 
 @Component({
@@ -88,21 +87,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this._authenticationService.currentUser.subscribe(x => (this.currentUser = x));
 
     this.languageOptions = {
+      
+      es: {
+        title: 'Spanish',
+        flag: 'es'
+      },
       en: {
         title: 'English',
         flag: 'us'
-      },
-      fr: {
-        title: 'French',
-        flag: 'fr'
-      },
-      de: {
-        title: 'German',
-        flag: 'de'
-      },
-      pt: {
-        title: 'Portuguese',
-        flag: 'pt'
       }
     };
 
@@ -130,7 +122,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
   setLanguage(language): void {
     // Set the selected language for the navbar on change
     this.selectedLanguage = language;
-
     // Use the selected language id for translations
     this._translateService.use(language);
 
@@ -179,7 +170,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     // get the currentUser details from localStorage
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
     // Subscribe to the config changes
     this._coreConfigService.config.pipe(takeUntil(this._unsubscribeAll)).subscribe(config => {
       this.coreConfig = config;

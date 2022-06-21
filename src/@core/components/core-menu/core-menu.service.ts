@@ -84,7 +84,6 @@ export class CoreMenuService {
     // Confirm if the key already used
     if (this._registry[key]) {
       console.error(`Menu with the key '${key}' already exists. Either unregister it first or use a unique key.`);
-
       return;
     }
 

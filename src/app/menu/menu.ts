@@ -4,43 +4,43 @@
   
   export const menu: CoreMenu[] = [
     // Dashboard
-    {
-      id: 'dashboard/home',
-      nombre: 'Hello',
-      icono: 'home',
-      type: 'item',
-      url: 'home',
-    },
-    {
-      id: 'invoice',
-      nombre: 'Redes',
-      type: 'collapsible',
-      icono: 'slack',
-      title: 'Redes',
-      children: [
-        {
-          id: 'invoice-list',
-          nombre: 'Comunicaciones',
-          type: 'item',
-          icono: 'circle',
-          url: 'dashboard/redes'
-        },
-        {
-          id: 'invoicePreview',
-          nombre: 'Conexiones',
-          type: 'item',
-          icono: 'circle',
-          url: 'apps/invoice/preview'
-        },
-        {
-          id: 'invoiceEdit',
-          nombre: 'Monitoreo',
-          type: 'item',
-          icono: 'circle',
-          url: 'apps/invoice/edit'
-        }
-      ]
-    },
+    // {
+    //   id: 'dashboard/home',
+    //   nombre: 'Principal',
+    //   icono: 'home',
+    //   type: 'item',
+    //   url: 'home',
+    // },
+    // {
+    //   id: 'invoice',
+    //   nombre: 'Redes',
+    //   type: 'collapsible',
+    //   icono: 'slack',
+    //   title: 'Redes',
+    //   children: [
+    //     {
+    //       id: 'invoice-list',
+    //       nombre: 'Comunicaciones',
+    //       type: 'item',
+    //       icono: 'circle',
+    //       url: 'dashboard/redes'
+    //     },
+    //     {
+    //       id: 'invoicePreview',
+    //       nombre: 'Conexiones',
+    //       type: 'item',
+    //       icono: 'circle',
+    //       url: 'apps/invoice/preview'
+    //     },
+    //     {
+    //       id: 'invoiceEdit',
+    //       nombre: 'Monitoreo',
+    //       type: 'item',
+    //       icono: 'circle',
+    //       url: 'apps/invoice/edit'
+    //     }
+    //   ]
+    // },
     // {
     //   id: 'invoice',
     //   nombre: 'Herramienta',
@@ -157,9 +157,3 @@
     // },
   ];
   
-
-  export class Menu {
-    constructor(){
-      console.log('Cargando el Menu')
-    }
-  }

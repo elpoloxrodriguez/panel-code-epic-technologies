@@ -6,29 +6,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { NgSelectModule } from '@ng-select/ng-select'
 import { CoreCommonModule } from '@core/common.module'
 import { TranslateModule } from '@ngx-translate/core'
-
-
-import { HomeComponent } from './home/home.component'
-import { RedesComponent } from './redes/redes.component'
-
+import { RedesRoutingModule } from './redes/redes-routing.module'
+import { HerramientasRoutingModule } from './herramientas/herramientas-routing.module'
+import { AplicacionesRoutingModule } from './aplicaciones/aplicaciones-routing.module'
+import { SeguridadRoutingModule } from './seguridad/seguridad-routing.module'
+import { DashboardComponent } from '../principal/dashboard.component'
 
 const routes: Routes = [
   {
     path: 'home',
-    component: HomeComponent,
+    component: DashboardComponent,
     data: { animation: 'home' }
   },
-  {
-    path: 'redes',
-    component: RedesComponent,
-    data: { animation: 'redes' }
-  },
-  {
-    path: '**',
-    redirectTo: './main/pages/miscellaneous/error' //Error 404 - Page not found
-  }
-
-];
+]
 
 @NgModule({
   declarations: [],
@@ -41,7 +31,10 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     TranslateModule,
-
+    RedesRoutingModule,
+    HerramientasRoutingModule,
+    AplicacionesRoutingModule,
+    SeguridadRoutingModule,
   ],
   exports: [RouterModule]
 })

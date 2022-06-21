@@ -106,7 +106,7 @@ export class AuthLoginV2Component implements OnInit {
    */
   ngOnInit(): void {
     if (sessionStorage.getItem("token") != undefined) {
-      this._router.navigate(['/dashboard', 'home'])
+      this._router.navigate(['/home'])
       return
    }
     this.loginForm = this._formBuilder.group({
@@ -133,11 +133,11 @@ export class AuthLoginV2Component implements OnInit {
         Swal.fire({
           position: 'top-end',
           icon: 'success',
-          title: 'Bienvenid@',
+          title: 'Bienvenido a Sandra Server',
           showConfirmButton: false,
           timer: 1500
         })
-        this._router.navigate(['/dashboard', 'home']);
+        this._router.navigate(['/home']);
         return
       },
       (error) => {

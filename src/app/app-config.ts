@@ -17,14 +17,14 @@ import { CoreConfig } from '@core/types';
 export const coreConfig: CoreConfig = {
   app: {
     appName     : 'CodeEpic',                                        // App Name
-    appTitle    : 'CodeEpic - Sandra Middleware', // App Title
+    appTitle    : 'CodeEpic - Sandra Server', // App Title
     appLogoImage: 'assets/images/logo/logo.svg',                  // App Logo
-    appLanguage : 'en',                                           // App Default Language (en, fr, de, pt etc..)
+    appLanguage : 'es',                                           // App Default Language (en, fr, de, pt etc..)
   },
   layout: {
     skin  : 'default',                        // default, dark, bordered, semi-dark
     type  : 'vertical',                       // vertical, horizontal
-    animation : 'fadeIn',                     // fadeInLeft, zoomIn , fadeIn, none
+    animation : 'zoomIn',                     // fadeInLeft, zoomIn , fadeIn, none
     menu : {
       hidden               : false,           // Boolean: true, false
       collapsed            : false,           // Boolean: true, false

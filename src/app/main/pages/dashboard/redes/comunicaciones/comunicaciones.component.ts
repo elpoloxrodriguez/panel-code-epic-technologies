@@ -7,9 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComunicacionesComponent implements OnInit {
 
+  public contentHeader: object
+  
   constructor() { }
 
   ngOnInit(): void {
+    this.contentHeader = {
+      headerTitle: 'Redes',
+      actionButton: true,
+      breadcrumb: {
+        type: '',
+        links: [
+          {
+            name: 'Comunicaciones',
+            isLink: true,
+            link: '/'
+          },
+          {
+            name: 'Principal',
+            isLink: false
+          }
+        ]
+      }
+    }
   }
 
 }

@@ -1,0 +1,128 @@
+
+  <div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+      <!-- content-header component -->
+      <app-content-header [contentHeader]="contentHeader"></app-content-header>
+
+      <!-- Basic Alerts start -->
+      <section id="home-page">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Establecer Conexiones</h4>
+              </div>
+              <div class="card-body pb-1">
+
+                <div class="row">
+                  <div class="col-xl-6 col-md-6 col-12 mb-1">
+                    <div class="form-group">
+                      <label for="basicInput">Hostaname</label>
+                      <select id="cmbHost" class="form-control selected" [ngModelOptions]="{standalone: true}"
+                        [(ngModel)]="host" value="{{host}}">
+                        <option value="0">SELECCIONE</option>
+                        <option *ngFor="let mdl of hosts" value="{{mdl.host}}">{{ mdl.host }} {{ mdl.descripcion }}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-md-6 col-12 mb-1">
+                    <div class="form-group">
+                      <label for="helpInputTop">Driver</label>
+                      <select id="cmbDriver" class="form-control selected" [ngModelOptions]="{standalone: true}"
+                        [(ngModel)]="driver" value="{{driver}}" (change)="onVisibleDrive()">
+                        <option value="0">------------</option>
+                        <option *ngFor="let mdl of drivers" value="{{mdl.id}}">{{ mdl.descripcion }}</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xl-8 col-md-6 col-12 mb-1">
+                    <div class="form-group">
+                      <label for="basicInput">Descripcion</label>
+                      <input type="text" id="txtBaseDatos" class="form-control" [ngModelOptions]="{standalone: true}"
+                        [(ngModel)]="basedatos" value="{{basedatos}}">
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-md-6 col-12 mb-1">
+                    <div class="form-group">
+                      <label for="helpInputTop">Identificador</label>
+                      <input class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xl-4 col-md-6 col-12 mb-1">
+                    <div class="form-group">
+                      <label for="basicInput">Estatus</label>
+                      <select id="booEstatus" class="form-control selected" [ngModelOptions]="{standalone: true}"
+                        [(ngModel)]="estatus" value="{{estatus}}">
+                        <option value=1>ACTIVO</option>
+                        <option value=0>INACTIVO</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <button type="button" class="btn btn-success" rippleEffect><span [data-feather]="'edit'"
+                        [class]="'mr-25'"></span> Registrar</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Listado general</h4>
+              </div>
+              <div class="card-body pb-1">
+
+
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Driver</th>
+                      <th>Base de Datos</th>
+                      <th>Descripción</th>
+                      <th>Host</th>
+                      <th>Puerto</th>
+                      <th>Acción</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of rowData let i = index">
+                      <td>{{ item.id }}</td>
+                      <td>{{ item.basedatos }}</td>
+                      <td>{{ item.descripcion }}</td>
+                      <td>{{ item.host }}</td>
+                      <td>{{ item.puerto }}</td>
+                      <td class="overflow-hidden">
+                        <div ngbDropdown container="body">
+                          <button type="button" class="btn btn-sm hide-arrow" ngbDropdownToggle data-toggle="dropdown">
+                            <i data-feather="more-vertical"></i>
+                          </button>
+                          <div ngbDropdownMenu>
+                            <a ngbDropdownItem href="javascript:void(0);"><i data-feather="edit-2"
+                                class="mr-50"></i><span>Editar</span></a><a ngbDropdownItem
+                              href="javascript:void(0);"><i data-feather="trash"
+                                class="mr-50"></i><span>Eliminar</span></a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Basic Alerts end -->
+    </div>
+  </div>
