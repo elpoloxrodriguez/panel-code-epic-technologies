@@ -11,11 +11,13 @@ import { HerramientasRoutingModule } from './herramientas/herramientas-routing.m
 import { AplicacionesRoutingModule } from './aplicaciones/aplicaciones-routing.module'
 import { SeguridadRoutingModule } from './seguridad/seguridad-routing.module'
 import { DashboardComponent } from '../principal/dashboard.component'
+import { AuthGuardGuard } from '@core/services/seguridad/auth-guard.guard';
 
 const routes: Routes = [
   {
     path: 'home',
     component: DashboardComponent,
+    canActivate:[AuthGuardGuard],
     data: { animation: 'home' }
   },
 ]

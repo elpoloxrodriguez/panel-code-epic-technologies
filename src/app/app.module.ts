@@ -14,7 +14,6 @@ import { CoreCommonModule } from '@core/common.module';
 import { CoreSidebarModule, CoreThemeCustomizerModule } from '@core/components';
 
 import { coreConfig } from 'app/app-config';
-
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
 import { DashboardModule } from 'app/main/pages/dashboard/dashboard.module';
@@ -37,10 +36,10 @@ const appRoutes: Routes = [
     path: '',
     loadChildren: () => import('./main/pages/pages.module').then(m => m.PagesModule),
   },
-  {
-    path: 'home',
-    loadChildren: () => import('./main/pages/dashboard/dashboard.module').then(m => m.DashboardModule)
-  },
+  // {
+  //   path: 'home',
+  //   loadChildren: () => import('./main/pages/dashboard/dashboard.module').then(m => m.DashboardModule),
+  // },
   {
     path: '**',
     redirectTo: '/miscellaneous/error' //Error 404 - Page not found
