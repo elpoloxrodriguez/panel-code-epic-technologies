@@ -7,6 +7,8 @@ import { ContentHeaderModule } from 'app/layout/components/content-header/conten
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -19,11 +21,11 @@ import { DashboardComponent } from '../principal/dashboard.component';
 import { ConexionesComponent } from './redes/conexiones/conexiones.component';
 import { ComunicacionesComponent } from './redes/comunicaciones/comunicaciones.component';
 
-
 @NgModule({
-  declarations: [DashboardComponent, ConexionesComponent, ComunicacionesComponent],
+    declarations: [DashboardComponent,  ConexionesComponent, ComunicacionesComponent ],
   imports: [
     CommonModule,
+    NgxDatatableModule,
     DashboardRoutingModule,
     CommonModule,
     ContentHeaderModule,

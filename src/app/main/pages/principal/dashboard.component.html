@@ -6,7 +6,30 @@
     <!-- Basic Alerts start -->
       <div class="row">
         <div class="col-12">
+          <button type="button" class="btn btn-outline-primary" (click)="modalOpenXL(modalXL)" rippleEffect>
+            Extra Large Modal
+          </button>
           <div class="row">
+            <!-- Modal -->
+<ng-template #modalXL let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title" id="myModalLabel160">Crear App</h5>
+    <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" tabindex="0" ngbAutofocus>
+    Tart lemon drops macaroon oat cake chocolate toffee chocolate bar icing. Pudding jelly beans
+    carrot cake pastry gummies cheesecake lollipop. I love cookie lollipop cake I love sweet gummi
+    bears cupcake dessert.
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="modal.close('Accept click')" rippleEffect>
+      Accept
+    </button>
+  </div>
+</ng-template>
+<!-- / Modal -->
             
             <div class="col-md-6 col-xl-3">
               <div class="card mb-3" (click)='irA("redes", "comunicaciones")'>

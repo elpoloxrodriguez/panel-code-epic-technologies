@@ -7,6 +7,7 @@ import { takeUntil } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import * as Waves from 'node-waves';
 
+
 import { CoreMenuService } from '@core/components/core-menu/core-menu.service';
 import { CoreSidebarService } from '@core/components/core-sidebar/core-sidebar.service';
 import { CoreConfigService } from '@core/services/config.service';
@@ -240,7 +241,6 @@ export class AppComponent implements OnInit, OnDestroy {
     // Set the application page title
     this._title.setTitle(this.coreConfig.app.appTitle);
   }
-
 
   /**
    * On destroy

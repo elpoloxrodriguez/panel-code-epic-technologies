@@ -4,6 +4,7 @@ import { ContentHeaderModule } from 'app/layout/components/content-header/conten
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -14,7 +15,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, NgSelectModule, RouterModule, ContentHeaderModule, NgbModule, FormsModule, ReactiveFormsModule, CoreCommonModule]
+  imports: [CommonModule, NgxDatatableModule, NgSelectModule, RouterModule, ContentHeaderModule, NgbModule, FormsModule, ReactiveFormsModule, CoreCommonModule]
   
 })
 export class RedesModule { }

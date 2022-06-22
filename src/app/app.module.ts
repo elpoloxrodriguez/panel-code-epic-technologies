@@ -30,6 +30,7 @@ import { UsuarioComponent } from './main/pages/dashboard/seguridad/usuario/usuar
 import { GraphqlComponent } from './main/pages/dashboard/herramientas/graphql/graphql.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 const appRoutes: Routes = [
   {
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
   declarations: [AppComponent, MonitoreoComponent, FuncionesComponent, ApiComponent, WorkflowComponent, InstalarComponent, MenuComponent, EventosComponent, RolComponent, PerfilComponent, UsuarioComponent, GraphqlComponent],
   imports: [
     BrowserModule,
+    NgxDatatableModule,
     BrowserAnimationsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes, {

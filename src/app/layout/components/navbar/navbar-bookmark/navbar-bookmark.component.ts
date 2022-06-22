@@ -12,10 +12,46 @@ export class NavbarBookmarkComponent implements OnInit {
   public bookmarkText = '';
   public openBookmarkRef = false;
   public activeIndex = 0;
-  public apiData;
   public pages = [];
   public bookmarkSearchLimit;
   public bookmarkedItems;
+  public searchLimit: 4;
+  public bookmarkLimit: 6;
+  public apiData = [
+    {
+      id: 0,
+      target: 'servidores',
+      isBookmarked: true,
+      title: 'Servidores',
+      icon: 'server',
+      link: 'redes/comunicaciones'
+    },
+    {
+      id: 1,
+      target: 'conexiones',
+      isBookmarked: true,
+      title: 'Conexiones',
+      icon: 'hard-drive',
+      link: 'redes/conexiones'
+    },
+    {
+      id: 2,
+      target: 'api',
+      isBookmarked: true,
+      title: 'Apis',
+      icon: 'slack',
+      link: 'herramienta/api'
+    },
+    {
+      id: 3,
+      target: 'seguridad',
+      isBookmarked: true,
+      title: 'Seguridad',
+      icon: 'lock',
+      link: '/seguridad/roles'
+    }
+  ];
+
 
   // Decorator
   @ViewChild('openBookmark') private _bookmarkElement: ElementRef;
@@ -184,9 +220,9 @@ export class NavbarBookmarkComponent implements OnInit {
   ngOnInit(): void {
     // this._searchService.onApiDataChange.subscribe(res => {
     //   this.apiData = res;
-    //   this.pages = this.apiData[0].data;
-    //   this.bookmarkedItems = this.pages.filter(page => page.isBookmarked === true);
-    //   this.bookmarkSearchLimit = this.apiData[0].bookmarkLimit;
+      this.pages = this.apiData;
+      this.bookmarkedItems = this.pages.filter(page => page.isBookmarked === true);
+      this.bookmarkSearchLimit = this.bookmarkLimit;;
     // });
     // this._searchService.onIsBookmarkOpenChange.subscribe(res => {
     //   this.openBookmarkRef = res;
