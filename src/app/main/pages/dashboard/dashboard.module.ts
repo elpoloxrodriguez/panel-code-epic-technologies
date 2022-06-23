@@ -5,6 +5,11 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { CoreCommonModule } from '@core/common.module';
 import { ContentHeaderModule } from 'app/layout/components/content-header/content-header.module';
 
+//  Code Mirror 
+import { CodemirrorModule } from '@ctrl/ngx-codemirror';
+import 'codemirror/mode/javascript/javascript';
+import 'codemirror/mode/markdown/markdown'
+
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
@@ -52,6 +57,7 @@ import { UsuarioComponent } from './seguridad/usuario/usuario.component';
     NgxDatatableModule,
     DashboardRoutingModule,
     CommonModule,
+    CodemirrorModule,
     ContentHeaderModule,
     CoreCommonModule,
     NgbModule,

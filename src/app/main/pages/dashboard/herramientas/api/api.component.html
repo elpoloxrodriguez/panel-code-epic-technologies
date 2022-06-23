@@ -1,17 +1,18 @@
-<div class="content-wrapper container-xxl p-0">
-    <div class="content-body">
-        <!-- content-header component -->
-        <app-content-header [contentHeader]="contentHeader"></app-content-header>
 
-        <!-- Basic Alerts start -->
-        <section id="home-page">
-            <div class="row">
-                <div class="col-12">
-                    <!-- <div class="card">
+    <div class="content-wrapper container-xxl p-0">
+        <div class="content-body">
+            <!-- content-header component -->
+            <app-content-header [contentHeader]="contentHeader"></app-content-header>
+
+            <!-- Basic Alerts start -->
+            <section id="home-page">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">API RESTFULL 🚀</h4>
-                        </div> -->
-
+                        </div>
+                        </div>
 
                         <ul ngbNav #navCenter="ngbNav" class="nav nav-pills justify-content-center">
                             <li ngbNavItem>
@@ -34,7 +35,7 @@
                                                                 </button>
                                                                 <div class="search-results">{{ (products | filter:
                                                                     searchText: 'funcion').length
-                                                                    }} Resultados
+                                                                }} Resultados
                                                                     encontrados</div>
                                                             </div>
                                                             <div class="view-options d-flex">
@@ -109,7 +110,8 @@
                                                 ">
                                                     <div class="item-img text-center">
                                                         <a [routerLink]="'/apps/e-commerce/details/' + product.id">
-                                                            <img class="img-fluid card-img-top" src="assets/images/pages/eCommerce/14.png"
+                                                            <img class="img-fluid card-img-top"
+                                                                src="assets/images/pages/eCommerce/14.png"
                                                                 alt="img-placeholder" />
                                                         </a>
                                                     </div>
@@ -121,30 +123,28 @@
                                                             </div>
                                                         </div> -->
                                                         <h6 class="item-name">
-                                                           <strong>{{ product.funcion }}</strong>
-                                                           <p>
-                                                            <span class="card-text item-company">
-                                                            {{ product.metodo }}</span>
+                                                            <strong>{{ product.funcion }}</strong>
+                                                            <p>
+                                                                <span class="card-text item-company">
+                                                                    {{ product.metodo }}</span>
                                                         </h6>
                                                         <p class="card-text item-description">
                                                             {{ product.descripcion }}
                                                         </p>
                                                     </div>
                                                     <div class="item-options text-center">
-                                                        <a href="javascript:void(0)"
-                                                            class="btn btn-info btn-wishlist"
+                                                        <a href="javascript:void(0)" class="btn btn-info btn-wishlist"
                                                             (click)="toggleWishlist(product)" rippleEffect>
                                                             <i data-feather="shopping-cart" class="mr-25"></i>
                                                             <span>Promover</span>
                                                         </a>
-                                                        <a 
-                                                            class="btn btn-warning btn-cart"
-                                                            (click)="addToCart(product)" rippleEffect>
+                                                        <a class="btn btn-warning btn-cart" (click)="addToCart(product)"
+                                                            rippleEffect>
                                                             <i data-feather="shopping-cart" class="mr-25"></i>
                                                             <span class="add-to-cart">Modificar</span>
                                                         </a>
-                                                        <a 
-                                                            class="btn btn-success btn-cart" rippleEffect>
+                                                        <a class="btn btn-success btn-cart"
+                                                            (click)="activarFormulario(frmSQL, product)" rippleEffect>
                                                             <i data-feather="shopping-cart" class="mr-25"></i>
                                                             <span class="add-to-cart">Probar</span>
                                                         </a>
@@ -213,7 +213,7 @@
                                                                 </button>
                                                                 <div class="search-results">{{ (quality | filter:
                                                                     searchText: 'funcion').length
-                                                                    }} Resultados
+                                                                }} Resultados
                                                                     encontrados</div>
                                                             </div>
                                                             <div class="view-options d-flex">
@@ -288,7 +288,8 @@
                                                 ">
                                                     <div class="item-img text-center">
                                                         <a [routerLink]="'/apps/e-commerce/details/' + product.id">
-                                                            <img class="img-fluid card-img-top" src="assets/images/pages/eCommerce/14.png"
+                                                            <img class="img-fluid card-img-top"
+                                                                src="assets/images/pages/eCommerce/14.png"
                                                                 alt="img-placeholder" />
                                                         </a>
                                                     </div>
@@ -300,30 +301,28 @@
                                                             </div>
                                                         </div> -->
                                                         <h6 class="item-name">
-                                                           <strong>{{ product.funcion }}</strong>
-                                                           <p>
-                                                            <span class="card-text item-company">
-                                                            {{ product.metodo }}</span>
+                                                            <strong>{{ product.funcion }}</strong>
+                                                            <p>
+                                                                <span class="card-text item-company">
+                                                                    {{ product.metodo }}</span>
                                                         </h6>
                                                         <p class="card-text item-description">
                                                             {{ product.descripcion }}
                                                         </p>
                                                     </div>
                                                     <div class="item-options text-center">
-                                                        <a href="javascript:void(0)"
-                                                            class="btn btn-info btn-wishlist"
+                                                        <a href="javascript:void(0)" class="btn btn-info btn-wishlist"
                                                             (click)="toggleWishlist(product)" rippleEffect>
                                                             <i data-feather="shopping-cart" class="mr-25"></i>
                                                             <span>Promover</span>
                                                         </a>
-                                                        <a 
-                                                            class="btn btn-warning btn-cart"
-                                                            (click)="addToCart(product)" rippleEffect>
+                                                        <a class="btn btn-warning btn-cart" (click)="addToCart(product)"
+                                                            rippleEffect>
                                                             <i data-feather="shopping-cart" class="mr-25"></i>
                                                             <span class="add-to-cart">Modificar</span>
                                                         </a>
-                                                        <a 
-                                                            class="btn btn-success btn-cart" rippleEffect>
+                                                        <a class="btn btn-success btn-cart"
+                                                            (click)="activarFormulario(frmSQL, product)" rippleEffect>
                                                             <i data-feather="shopping-cart" class="mr-25"></i>
                                                             <span class="add-to-cart">Probar</span>
                                                         </a>
@@ -392,7 +391,7 @@
                                                                 </button>
                                                                 <div class="search-results">{{ (production | filter:
                                                                     searchText: 'funcion').length
-                                                                    }} Resultados
+                                                                }} Resultados
                                                                     encontrados</div>
                                                             </div>
                                                             <div class="view-options d-flex">
@@ -467,7 +466,8 @@
                                                 ">
                                                     <div class="item-img text-center">
                                                         <a [routerLink]="'/apps/e-commerce/details/' + product.id">
-                                                            <img class="img-fluid card-img-top" src="assets/images/pages/eCommerce/14.png"
+                                                            <img class="img-fluid card-img-top"
+                                                                src="assets/images/pages/eCommerce/14.png"
                                                                 alt="img-placeholder" />
                                                         </a>
                                                     </div>
@@ -479,30 +479,28 @@
                                                             </div>
                                                         </div> -->
                                                         <h6 class="item-name">
-                                                           <strong>{{ product.funcion }}</strong>
-                                                           <p>
-                                                            <span class="card-text item-company">
-                                                            {{ product.metodo }}</span>
+                                                            <strong>{{ product.funcion }}</strong>
+                                                            <p>
+                                                                <span class="card-text item-company">
+                                                                    {{ product.metodo }}</span>
                                                         </h6>
                                                         <p class="card-text item-description">
                                                             {{ product.descripcion }}
                                                         </p>
                                                     </div>
                                                     <div class="item-options text-center">
-                                                        <a href="javascript:void(0)"
-                                                            class="btn btn-info btn-wishlist"
+                                                        <a href="javascript:void(0)" class="btn btn-info btn-wishlist"
                                                             (click)="toggleWishlist(product)" rippleEffect>
                                                             <i data-feather="shopping-cart" class="mr-25"></i>
                                                             <span>Promover</span>
                                                         </a>
-                                                        <a 
-                                                            class="btn btn-warning btn-cart"
-                                                            (click)="addToCart(product)" rippleEffect>
+                                                        <a class="btn btn-warning btn-cart" (click)="addToCart(product)"
+                                                            rippleEffect>
                                                             <i data-feather="shopping-cart" class="mr-25"></i>
                                                             <span class="add-to-cart">Modificar</span>
                                                         </a>
-                                                        <a 
-                                                            class="btn btn-success btn-cart" rippleEffect>
+                                                        <a class="btn btn-success btn-cart"
+                                                            (click)="activarFormulario(frmSQL, product)" rippleEffect>
                                                             <i data-feather="shopping-cart" class="mr-25"></i>
                                                             <span class="add-to-cart">Probar</span>
                                                         </a>
@@ -555,10 +553,93 @@
                         <div [ngbNavOutlet]="navCenter" class="mt-1"></div>
 
 
-                    <!-- </div> -->
+                        <!-- </div> -->
+                    </div>
                 </div>
-            </div>
-        </section>
-        <!-- Basic Alerts end -->
+            </section>
+            <!-- Basic Alerts end -->
+        </div>
     </div>
-</div>
+
+
+
+
+    <ng-template #frmSQL let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel1">Laboratorio de Pruebas</h4>
+            <button type="button" class="close" (click)="modal.dismiss('Cross click')" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body" tabindex="0" ngbAutofocus>
+
+
+            <ul ngbNav #navCenter="ngbNav" class="nav nav-pills justify-content-center">
+                <li ngbNavItem>
+                    <a ngbNavLink><i data-feather="shopping-cart" class="mr-25"></i> Prueba de API</a>
+                    <ng-template ngbNavContent>
+                        <div class="form-group">
+                            <label for="basicInput">Parametros</label>
+                            <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" 
+                            [(ngModel)]="xparametro" (blur)="clickRefresh(0)" value ="{{xparametro}}" placeholder="Ingrese Parametros" />
+                          </div>
+                        <div class="form-group">
+                            <label>Valores</label>
+
+                            <ngx-codemirror
+                            [ngModelOptions]="{standalone: true}" 
+                            [(ngModel)]="valores"
+                            (ngModelChange)="setEditorContent($event)"
+                            (blur)="seleccionEditor($event)"
+                            [options]="codeMOEsquemaJson"
+                            ></ngx-codemirror>
+                        </div>
+                        <div class="form-group">
+                            <label for="basicInput">Ejecutar función</label>
+                            <div class="input-group mb-3">
+                                <input style="font-size:14px;" type="text" class="form-control"
+                                    [ngModelOptions]="{standalone: true}" [(ngModel)]="xentorno" value="{{xentorno}}"
+                                    readonly>
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-success" (click)="ejecutarApi()"><i
+                                            class="fa fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Resultado</label>
+                            <div style="width:100%; height:150px; overflow: scroll;">
+                                <div id="xrs" style="font-size:11px; width: 100%; height: 150px;"></div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </li>
+                <li ngbNavItem>
+                    <a ngbNavLink><i data-feather="shopping-cart" class="mr-25"></i> Fragmento de Código</a>
+                    <ng-template ngbNavContent>
+                        <fieldset class="form-label-group mb-0">
+                            <textarea [ngModelOptions]="{standalone: true}" [(ngModel)]="codeTypeJs"  value ="{{codeTypeJs}}" #textLength [maxlength]="99999999999"
+                                class="form-control char-textarea" id="textarea-counter" rows="20"
+                                placeholder="Ejemplo de ejecución"></textarea>
+                            <label for="textarea-counter">Ejemplo de ejecución</label>
+                        </fieldset>
+                        <small class="textarea-counter-value float-right"><span *ngIf="textLength" class="char-count">{{
+                                textLength.value.length
+                        }}</span>
+                            <span *ngIf="!textLength" class="char-count">0 </span>
+                        </small>
+                    </ng-template>
+                </li>
+            </ul>
+            <div [ngbNavOutlet]="navCenter" class="mt-1"></div>
+
+
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" (click)="modal.close('Accept click')" rippleEffect>
+                Cerrar
+            </button>
+        </div>
+    </ng-template>

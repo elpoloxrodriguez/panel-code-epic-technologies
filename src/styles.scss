@@ -1,2 +1,15 @@
 @import '@core/scss/core.scss';
 @import './assets/scss/styles';
+
+
+@import '~codemirror/lib/codemirror';
+@import '~codemirror/theme/material';
+@import '~codemirror/theme/material-ocean';
+@import '~codemirror/theme/solarized';
+@import '~codemirror/theme/monokai';
+@import '~codemirror/theme/idea';
+@import '~codemirror/theme/eclipse';
+
+@import '~codemirror/addon/fold/foldgutter.css';
+@import '~codemirror/addon/lint/lint.css';
+@import '~codemirror/addon/hint/show-hint.css';

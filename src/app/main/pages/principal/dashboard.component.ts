@@ -53,7 +53,9 @@ export class DashboardComponent implements OnInit {
 
   activarFormulario(content) {
     this.modalService.open(content, {
-      centered: true
+      centered: true,
+      size: 'xl',
+      scrollable: true
     }).result.then(
       (result) => {
         this.closeResult = `Closed with: ${result}`;
