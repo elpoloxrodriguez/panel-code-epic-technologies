@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
+import { menu } from 'app/menu/menu';
+import { CoreMenuService } from '@core/components/core-menu/core-menu.service';
+import { LoginService } from '@core/services/seguridad/login.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -8,28 +12,32 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  public menu: any
+
   /**
-   *
-   * @param {CoreTranslationService} _coreTranslationService
+   * 
+   * @param modalService 
+   * @param ruta 
+   * @param _coreMenuService 
+   * @param loginService 
    */
   constructor(
     private modalService: NgbModal,
-    private ruta: Router
-  ) {
+    private ruta: Router,
+    private _coreMenuService: CoreMenuService,
+    private loginService: LoginService) {
   }
 
   public contentHeader: object
-  // Public
+
+
   closeResult: string = ''
 
-  // Lifecycle Hooks
-  // -----------------------------------------------------------------------------------------------------
 
-  
   irA(base: string, ruta: string) {
     this.ruta.navigate([base, ruta])
   }
-  
+
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'ESC';
@@ -39,9 +47,8 @@ export class DashboardComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
-  
+
   activarFormulario(content) {
-    // console.log(item)
     this.modalService.open(content, {
       centered: true,
       size: 'lg',
@@ -52,39 +59,45 @@ export class DashboardComponent implements OnInit {
       }, (reason) => {
         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
       });
-      // var api = item.entorno == "produccion" ? "/v1/" : "/devel/"
-      // this.xentorno = api + "api/crud:" + item.id;
-      // this.data = item
-      // if (item.entradas != undefined) {
-        //   this.codeTypeJs = this.apiService.GenerarCodigo(item.entradas, item.funcion, this.xentorno)
-        //   this.clickRefresh(0)
-        // }
-      }
-      
-      /**
-       * On init
-       */
-       ngOnInit() {
-        this.contentHeader = {
-          headerTitle: 'Dashboard',
-          actionButton: true,
-          breadcrumb: {
-            type: '',
-            links: [
-              {
-                name: 'Inicio',
-                isLink: true,
-                link: '/'
-              },
-              {
-                name: 'Principal',
-                isLink: false
-              }
-            ]
-          }
-        }
-      }
+  }
 
-      
+  /**
+   * On init
+   */
+  ngOnInit() {
+    this.contentHeader = {
+      headerTitle: 'Dashboard',
+      actionButton: true,
+      breadcrumb: {
+        type: '',
+        links: [
+          {
+            name: 'Inicio',
+            isLink: true,
+            link: '/'
+          },
+          {
+            name: 'Principal',
+            isLink: false
+          }
+        ]
+      }
     }
-    
+    this.cargarMenu()
+
+  }
+
+  async cargarMenu() {
+    try {
+      const App = await this.loginService.Iniciar().then()
+      this.menu = App.Rol.Menu == undefined ? menu : this.loginService.obtenerMenu()
+      this._coreMenuService.register('main', this.menu);
+      this._coreMenuService.setCurrentMenu('main');
+    } catch (error) {
+      console.error('Error cargando menu');
+    }
+
+  }
+
+
+}

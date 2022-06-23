@@ -27,4 +27,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
   ],
 
 })
-export class PagesModule {}
+export class PagesModule {
+
+
+}
