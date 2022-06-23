@@ -20,9 +20,35 @@ import { LoginService } from '@core/services/seguridad/login.service';
 import { DashboardComponent } from '../principal/dashboard.component';
 import { ConexionesComponent } from './redes/conexiones/conexiones.component';
 import { ComunicacionesComponent } from './redes/comunicaciones/comunicaciones.component';
+import { InstalarComponent } from './aplicaciones/instalar/instalar.component';
+import { ApiComponent } from './herramientas/api/api.component';
+import { FuncionesComponent } from './herramientas/funciones/funciones.component';
+import { GraphqlComponent } from './herramientas/graphql/graphql.component';
+import { WorkflowComponent } from './herramientas/workflow/workflow.component';
+import { MonitoreoComponent } from './redes/monitoreo/monitoreo.component';
+import { MenuComponent } from './aplicaciones/menu/menu.component';
+import { EventosComponent } from './aplicaciones/eventos/eventos.component';
+import { PerfilComponent } from './seguridad/perfil/perfil.component';
+import { RolComponent } from './seguridad/rol/rol.component';
+import { UsuarioComponent } from './seguridad/usuario/usuario.component';
 
 @NgModule({
-    declarations: [DashboardComponent,  ConexionesComponent, ComunicacionesComponent ],
+    declarations: [
+      DashboardComponent,
+      EventosComponent,
+      ComunicacionesComponent,
+      MenuComponent,
+      InstalarComponent,
+      MonitoreoComponent,
+      GraphqlComponent,
+      WorkflowComponent,
+      ApiComponent,
+      FuncionesComponent,
+      ConexionesComponent,
+      PerfilComponent,
+      UsuarioComponent,
+      RolComponent,
+    ],
   imports: [
     CommonModule,
     NgxDatatableModule,

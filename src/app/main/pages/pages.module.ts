@@ -7,7 +7,6 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 
 import { CoreCommonModule } from '@core/common.module';
-import { ContentHeaderModule } from 'app/layout/components/content-header/content-header.module';
 
 import { AuthenticationModule } from './authentication/authentication.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
@@ -19,7 +18,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     CommonModule,
     NgxDatatableModule,
     CoreCommonModule,
-    ContentHeaderModule,
     NgbModule,
     NgSelectModule,
     FormsModule,
@@ -28,6 +26,5 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     MiscellaneousModule
   ],
 
-  providers: []
 })
 export class PagesModule {}

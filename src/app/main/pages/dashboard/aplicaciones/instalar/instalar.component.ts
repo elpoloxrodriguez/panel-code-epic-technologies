@@ -146,23 +146,18 @@ export class InstalarComponent implements OnInit {
 
     // content header
     this.contentHeader = {
-      headerTitle: 'Form Wizard',
+      headerTitle: 'Aplicaciones',
       actionButton: true,
       breadcrumb: {
         type: '',
         links: [
           {
-            name: 'Home',
+            name: 'Instalar',
             isLink: true,
             link: '/'
           },
           {
-            name: 'Forms',
-            isLink: true,
-            link: '/'
-          },
-          {
-            name: 'Form Wizard',
+            name: 'Modelo CWAS ( Servidor de Aplicaciones CodeEpic Web )',
             isLink: false
           }
         ]

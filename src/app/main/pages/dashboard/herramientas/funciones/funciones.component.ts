@@ -7,9 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FuncionesComponent implements OnInit {
 
+  public contentHeader: object;
+  
   constructor() { }
 
   ngOnInit(): void {
+    this.contentHeader = {
+      headerTitle: 'Herramientas',
+      actionButton: true,
+      breadcrumb: {
+        type: '',
+        links: [
+          {
+            name: 'Funciones',
+            isLink: true,
+            link: '/'
+          },
+          {
+            name: 'Principal',
+            isLink: false
+          }
+        ]
+      }
+    }
   }
 
 }

@@ -39,7 +39,7 @@ export class NavbarBookmarkComponent implements OnInit {
       target: 'api',
       isBookmarked: true,
       title: 'Apis',
-      icon: 'slack',
+      icon: 'tool',
       link: 'herramienta/api'
     },
     {

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+
 
 import 'hammerjs';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -12,6 +12,9 @@ import { ToastrModule } from 'ngx-toastr'; // For auth after login toast
 import { CoreModule } from '@core/core.module';
 import { CoreCommonModule } from '@core/common.module';
 import { CoreSidebarModule, CoreThemeCustomizerModule } from '@core/components';
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { coreConfig } from 'app/app-config';
 import { AppComponent } from 'app/app.component';
@@ -31,6 +34,7 @@ import { GraphqlComponent } from './main/pages/dashboard/herramientas/graphql/gr
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { PagesModule } from './main/pages/pages.module';
 
 const appRoutes: Routes = [
   {
@@ -48,7 +52,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, MonitoreoComponent, FuncionesComponent, ApiComponent, WorkflowComponent, InstalarComponent, MenuComponent, EventosComponent, RolComponent, PerfilComponent, UsuarioComponent, GraphqlComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     NgxDatatableModule,
@@ -78,7 +82,9 @@ const appRoutes: Routes = [
     // App modules
     LayoutModule,
     DashboardModule,
+    PagesModule
   ],
+ 
 
   bootstrap: [AppComponent]
 })

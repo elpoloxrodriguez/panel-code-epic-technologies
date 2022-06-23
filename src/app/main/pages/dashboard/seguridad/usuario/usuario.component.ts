@@ -6,10 +6,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usuario.component.scss']
 })
 export class UsuarioComponent implements OnInit {
+  public contentHeader: object;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.contentHeader = {
+      headerTitle: 'Herramientas',
+      actionButton: true,
+      breadcrumb: {
+        type: '',
+        links: [
+          {
+            name: 'Usuarios',
+            isLink: true,
+            link: '/'
+          },
+          {
+            name: 'Principal',
+            isLink: false
+          }
+        ]
+      }
+    }
   }
 
 }

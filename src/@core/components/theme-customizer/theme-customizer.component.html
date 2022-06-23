@@ -1,8 +1,8 @@
 <div class="customizer-content" [perfectScrollbar]>
   <!-- Customizer header -->
   <div class="customizer-header px-2 pt-1 pb-0 position-relative">
-    <h4 class="mb-0">Theme Customizer</h4>
-    <p class="m-0">Customize & Preview in Real Time</p>
+    <h4 class="mb-0">Personalizador de temas</h4>
+    <p class="m-0">Personalizar y previsualizar en tiempo real</p>
 
     <a class="customizer-close" (click)="toggleSidebar('themeCustomizer')"><span [data-feather]="'x'"></span></a>
   </div>
@@ -14,7 +14,7 @@
       <div id="customizer-styling" class="px-2">
         <!-- Skin -->
         <div id="customizer-styling-skin">
-          <p class="font-weight-bold">Skin</p>
+          <p class="font-weight-bold">Piel</p>
           <div class="d-flex">
             <div class="custom-control custom-radio mr-1">
               <input
@@ -24,7 +24,7 @@
                 class="custom-control-input layout-name"
                 value="default"
               />
-              <label class="custom-control-label" for="skinlight">Light</label>
+              <label class="custom-control-label" for="skinlight">Luz</label>
             </div>
             <div class="custom-control custom-radio mr-1">
               <input
@@ -34,7 +34,7 @@
                 class="custom-control-input layout-name"
                 value="bordered"
               />
-              <label class="custom-control-label" for="skinbordered">Bordered</label>
+              <label class="custom-control-label" for="skinbordered">Bordeado</label>
             </div>
             <div class="custom-control custom-radio mr-1">
               <input
@@ -44,7 +44,7 @@
                 class="custom-control-input layout-name"
                 value="dark"
               />
-              <label class="custom-control-label" for="skindark">Dark</label>
+              <label class="custom-control-label" for="skindark">Oscuro</label>
             </div>
             <div class="custom-control custom-radio" *ngIf="coreConfig.layout.type == 'vertical'">
               <input
@@ -54,17 +54,17 @@
                 class="custom-control-input layout-name"
                 value="semi-dark"
               />
-              <label class="custom-control-label" for="skinsemidark">Semi Dark</label>
+              <label class="custom-control-label" for="skinsemidark">Semi oscuro</label>
             </div>
           </div>
           <!-- Router animation -->
           <div class="d-flex justify-content-between align-items-center mt-2">
-            <p class="font-weight-bold mr-auto m-0" for="routeSelect">Route Transition</p>
+            <p class="font-weight-bold mr-auto m-0" for="routeSelect">Transición de rutas</p>
             <select formControlName="animation" class="form-control w-50" id="routeSelect">
-              <option value="fadeInLeft">Fade In Left</option>
-              <option value="zoomIn">Zoom In</option>
-              <option value="fadeIn">Fade In</option>
-              <option value="none">None</option>
+              <option value="fadeInLeft">Desvanecer a la izquierda</option>
+              <option value="zoomIn">Acercarse</option>
+              <option value="fadeIn">Fundirse</option>
+              <option value="none">Ninguna</option>
             </select>
           </div>
         </div>
@@ -76,7 +76,7 @@
       <div class="customizer-menu px-2">
         <!-- Menu Layout -->
         <div id="customizer-menu-type">
-          <p class="font-weight-bold">Menu Layout</p>
+          <p class="font-weight-bold">Diseño del menú</p>
           <div class="d-flex">
             <div class="custom-control custom-radio mr-1">
               <input
@@ -108,7 +108,7 @@
           formGroupName="menu"
           *ngIf="coreConfig.layout.type == 'vertical'"
         >
-          <p class="font-weight-bold mr-auto m-0">Menu Collapsed</p>
+          <p class="font-weight-bold mr-auto m-0">Menú contraído</p>
           <div class="custom-control custom-control-primary custom-switch">
             <input
               type="checkbox"
@@ -122,7 +122,7 @@
 
         <!-- Menu Hidden -->
         <div id="customizer-menu-hidden" class="d-flex mt-2" formGroupName="menu">
-          <p class="font-weight-bold mr-auto m-0">Menu Hidden</p>
+          <p class="font-weight-bold mr-auto m-0">Menú Oscuro</p>
           <div class="custom-control custom-control-primary custom-switch">
             <input type="checkbox" class="custom-control-input" id="collapse-sidebar-hidden" formControlName="hidden" />
             <label class="custom-control-label" for="collapse-sidebar-hidden"></label>
@@ -135,7 +135,7 @@
       <div id="customizer-navbar" class="px-2" formGroupName="navbar">
         <!-- Navbar Color -->
         <div id="customizer-navbar-colors" *ngIf="coreConfig.layout.type == 'vertical'">
-          <p class="font-weight-bold">Navbar Color</p>
+          <p class="font-weight-bold">Color de la barra de navegación</p>
           <ul class="list-inline unstyled-list">
             <li
               class="color-box bg-white border"
@@ -185,7 +185,7 @@
             class="navbar-type-text font-weight-bold"
             *ngIf="coreConfig.layout.type == 'vertical'; else navbarTypeHorizontal"
           >
-            Navbar Type
+          Tipo de barra de navegación
           </p>
           <ng-template #navbarTypeHorizontal> <p class="navbar-type-text font-weight-bold">Menu Type</p> </ng-template>
           <div class="d-flex">
@@ -197,7 +197,7 @@
                 formControlName="type"
                 class="custom-control-input"
               />
-              <label class="custom-control-label" for="nav-type-floating">Floating</label>
+              <label class="custom-control-label" for="nav-type-floating">Flotante</label>
             </div>
             <div class="custom-control custom-radio mr-1">
               <input
@@ -207,7 +207,7 @@
                 formControlName="type"
                 class="custom-control-input"
               />
-              <label class="custom-control-label" for="nav-type-sticky">Sticky</label>
+              <label class="custom-control-label" for="nav-type-sticky">Pegajoso</label>
             </div>
             <div class="custom-control custom-radio mr-1">
               <input
@@ -217,7 +217,7 @@
                 formControlName="type"
                 class="custom-control-input"
               />
-              <label class="custom-control-label" for="nav-type-static">Static</label>
+              <label class="custom-control-label" for="nav-type-static">Estático</label>
             </div>
             <div class="custom-control custom-radio" *ngIf="coreConfig.layout.type == 'vertical'">
               <input
@@ -227,7 +227,7 @@
                 formControlName="type"
                 class="custom-control-input"
               />
-              <label class="custom-control-label" for="nav-type-hidden">Hidden</label>
+              <label class="custom-control-label" for="nav-type-hidden">Oculto</label>
             </div>
           </div>
         </div>
@@ -237,7 +237,7 @@
       <!-- Footer -->
       <div id="customizer-footer" class="px-2 mb-2" formGroupName="footer">
         <div id="customizer-footer-type">
-          <p class="font-weight-bold">Footer Type</p>
+          <p class="font-weight-bold">Tipo de pie de página</p>
           <div class="d-flex">
             <div class="custom-control custom-radio mr-1">
               <input
@@ -247,7 +247,7 @@
                 formControlName="type"
                 class="custom-control-input"
               />
-              <label class="custom-control-label" for="footer-type-sticky">Sticky</label>
+              <label class="custom-control-label" for="footer-type-sticky">Pegajoso</label>
             </div>
             <div class="custom-control custom-radio mr-1">
               <input
@@ -257,7 +257,7 @@
                 formControlName="type"
                 class="custom-control-input"
               />
-              <label class="custom-control-label" for="footer-type-static">Static</label>
+              <label class="custom-control-label" for="footer-type-static">Estático</label>
             </div>
             <div class="custom-control custom-radio mr-1">
               <input
@@ -267,7 +267,7 @@
                 formControlName="type"
                 class="custom-control-input"
               />
-              <label class="custom-control-label" for="footer-type-hidden">Hidden</label>
+              <label class="custom-control-label" for="footer-type-hidden">Oculto</label>
             </div>
           </div>
         </div>

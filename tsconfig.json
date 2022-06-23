@@ -15,7 +15,7 @@
     "lib": ["es2018", "dom"],
     "paths": {
       "@core": ["@core/"],
-      "@assets": ["assets/*"],
+      "@assets": ["assets/"],
       "@service": ["app/service/*"],
       "@fake-db": ["@fake-db/"],
       "environments": ["environments/"]

@@ -8,8 +8,27 @@ import { Component, OnInit } from '@angular/core';
 export class RolComponent implements OnInit {
 
   constructor() { }
+  public contentHeader: object;
 
   ngOnInit(): void {
+    this.contentHeader = {
+      headerTitle: 'Herramientas',
+      actionButton: true,
+      breadcrumb: {
+        type: '',
+        links: [
+          {
+            name: 'Roles',
+            isLink: true,
+            link: '/'
+          },
+          {
+            name: 'Principal',
+            isLink: false
+          }
+        ]
+      }
+    }
   }
 
 }
