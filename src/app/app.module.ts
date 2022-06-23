@@ -20,17 +20,6 @@ import { coreConfig } from 'app/app-config';
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
 import { DashboardModule } from 'app/main/pages/dashboard/dashboard.module';
-import { MonitoreoComponent } from './main/pages/dashboard/redes/monitoreo/monitoreo.component';
-import { FuncionesComponent } from './main/pages/dashboard/herramientas/funciones/funciones.component';
-import { ApiComponent } from './main/pages/dashboard/herramientas/api/api.component';
-import { WorkflowComponent } from './main/pages/dashboard/herramientas/workflow/workflow.component';
-import { InstalarComponent } from './main/pages/dashboard/aplicaciones/instalar/instalar.component';
-import { MenuComponent } from './main/pages/dashboard/aplicaciones/menu/menu.component';
-import { EventosComponent } from './main/pages/dashboard/aplicaciones/eventos/eventos.component';
-import { RolComponent } from './main/pages/dashboard/seguridad/rol/rol.component';
-import { PerfilComponent } from './main/pages/dashboard/seguridad/perfil/perfil.component';
-import { UsuarioComponent } from './main/pages/dashboard/seguridad/usuario/usuario.component';
-import { GraphqlComponent } from './main/pages/dashboard/herramientas/graphql/graphql.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
@@ -41,10 +30,6 @@ const appRoutes: Routes = [
     path: '',
     loadChildren: () => import('./main/pages/pages.module').then(m => m.PagesModule),
   },
-  // {
-  //   path: 'home',
-  //   loadChildren: () => import('./main/pages/dashboard/dashboard.module').then(m => m.DashboardModule),
-  // },
   {
     path: '**',
     redirectTo: '/miscellaneous/error' //Error 404 - Page not found

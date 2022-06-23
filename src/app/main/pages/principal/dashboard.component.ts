@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModalConfig, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
 import { menu } from 'app/menu/menu';
 import { CoreMenuService } from '@core/components/core-menu/core-menu.service';
 import { LoginService } from '@core/services/seguridad/login.service';
@@ -22,10 +22,13 @@ export class DashboardComponent implements OnInit {
    * @param loginService 
    */
   constructor(
+    config: NgbModalConfig,
     private modalService: NgbModal,
     private ruta: Router,
     private _coreMenuService: CoreMenuService,
     private loginService: LoginService) {
+    config.backdrop = false;
+    config.keyboard = false;
   }
 
   public contentHeader: object
@@ -50,9 +53,7 @@ export class DashboardComponent implements OnInit {
 
   activarFormulario(content) {
     this.modalService.open(content, {
-      centered: true,
-      size: 'lg',
-      ariaLabelledBy: 'modal-basic-title'
+      centered: true
     }).result.then(
       (result) => {
         this.closeResult = `Closed with: ${result}`;
