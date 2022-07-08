@@ -23,7 +23,7 @@ import { DashboardModule } from 'app/main/pages/dashboard/dashboard.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { PagesModule } from './main/pages/pages.module';
+import { RegistrarApiComponent } from './main/pages/dashboard/herramientas/api/registrar-api/registrar-api.component';
 
 const appRoutes: Routes = [
   {
@@ -37,7 +37,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, RegistrarApiComponent],
   imports: [
     BrowserModule,
     NgxDatatableModule,
@@ -67,7 +67,7 @@ const appRoutes: Routes = [
     // App modules
     LayoutModule,
     DashboardModule,
-    PagesModule
+    // PagesModule
   ],
  
 

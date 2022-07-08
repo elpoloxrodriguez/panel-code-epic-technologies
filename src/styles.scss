@@ -4,6 +4,10 @@
 
 @import '~codemirror/lib/codemirror';
 @import '~codemirror/theme/material';
+.CodeMirror {
+    border: 5px solid #eeeeee;
+    height: auto;
+  }
 @import '~codemirror/theme/material-ocean';
 @import '~codemirror/theme/solarized';
 @import '~codemirror/theme/monokai';

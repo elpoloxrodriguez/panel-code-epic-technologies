@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ApiService, IAPICore } from '@core/services/apicore/api.service';
 import { NgbModal, NgbModalConfig, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import JSONFormatter from 'json-formatter-js';
-
+import { RegistrarApiComponent } from './registrar-api/registrar-api.component'
 
 @Component({
   selector: 'app-api',
@@ -11,7 +11,11 @@ import JSONFormatter from 'json-formatter-js';
   encapsulation: ViewEncapsulation.None,
   host: { class: 'ecommerce-application' }
 })
+
 export class ApiComponent implements OnInit {
+  
+  @ViewChild(RegistrarApiComponent) registraApi: RegistrarApiComponent
+
 
   public contentHeader: object;
   public developer = []
@@ -96,7 +100,8 @@ export class ApiComponent implements OnInit {
       gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter', 'CodeMirror-lint-markers'],
       autoCloseBrackets: true,
       matchBrackets: true,
-      lint: true
+      lint: true,
+      autofocus: true
   };
 
   codeJson: any = {
@@ -145,6 +150,22 @@ export class ApiComponent implements OnInit {
       this.clickRefresh(0)
     }
   }
+
+
+  RegistrarAPI(content) {
+    console.log(content);
+    this.modalService.open(content, {
+      centered: true,
+      size: 'lg',
+      scrollable: true
+    }).result.then(
+      (result) => {
+        this.closeResult = `Closed with: ${result}`;
+      }, (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      });
+  }
+
 
   async ListarApis() {
     this.developer = []

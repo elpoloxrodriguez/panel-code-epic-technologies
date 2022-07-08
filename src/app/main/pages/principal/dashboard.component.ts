@@ -67,7 +67,7 @@ export class DashboardComponent implements OnInit {
   /**
    * On init
    */
-  ngOnInit() {
+  async ngOnInit() {
     this.contentHeader = {
       headerTitle: 'Dashboard',
       actionButton: true,
@@ -86,7 +86,13 @@ export class DashboardComponent implements OnInit {
         ]
       }
     }
-    this.cargarMenu()
+
+    var token = sessionStorage.getItem('token');
+    if (token === null) {
+      this.menu = menu;
+    } else {
+      this.cargarMenu()
+    }
 
   }
 

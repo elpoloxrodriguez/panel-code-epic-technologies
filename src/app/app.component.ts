@@ -27,8 +27,8 @@ import { LoginService } from '@core/services/seguridad/login.service';
 export class AppComponent implements OnInit, OnDestroy {
   coreConfig: any;
   menu: any;
-  defaultLanguage: 'en'; // This language will be used as a fallback when a translation isn't found in the current language
-  appLanguage: 'en'; // Set application default language i.e fr
+  defaultLanguage: 'es'; // This language will be used as a fallback when a translation isn't found in the current language
+  appLanguage: 'es'; // Set application default language i.e fr
 
   // Private
   private _unsubscribeAll: Subject<any>;
@@ -62,6 +62,7 @@ export class AppComponent implements OnInit, OnDestroy {
   ) {
     // Get the application main menu
     // this.menu = menu;
+    
 
     // Register the menu to the menu service
     this._coreMenuService.register('main', this.menu);
@@ -73,7 +74,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this._translateService.addLangs(['en', 'es']);
 
     // This language will be used as a fallback when a translation isn't found in the current language
-    this._translateService.setDefaultLang('en');
+    this._translateService.setDefaultLang('es');
 
     // Set the translations for the menu
     this._coreTranslationService.translate(en, es);
@@ -85,12 +86,10 @@ export class AppComponent implements OnInit, OnDestroy {
   // Lifecycle hooks
   // -----------------------------------------------------------------------------------------------------
 
-
   /**
    * On init
    */
-  ngOnInit(): void {
-
+   ngOnInit(): void{
     // Init wave effect (Ripple effect)
     Waves.init();
 
@@ -103,7 +102,7 @@ export class AppComponent implements OnInit, OnDestroy {
       // Change application language? Read the ngxTranslate Fix
 
       // ? Use app-config.ts file to set default language
-      const appLanguage = this.coreConfig.app.appLanguage || 'en';
+      const appLanguage = this.coreConfig.app.appLanguage || 'es';
       this._translateService.use(appLanguage);
 
       // ? OR
@@ -129,7 +128,7 @@ export class AppComponent implements OnInit, OnDestroy {
       // Set the default language to 'en' and then back to 'fr'.
 
       setTimeout(() => {
-        this._translateService.setDefaultLang('en');
+        this._translateService.setDefaultLang('es');
         this._translateService.setDefaultLang(appLanguage);
       });
 

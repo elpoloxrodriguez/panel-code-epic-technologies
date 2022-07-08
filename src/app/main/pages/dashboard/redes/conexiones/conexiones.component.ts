@@ -125,6 +125,7 @@ export class ConexionesComponent implements OnInit {
             this.rows = this.data;
             this.tempData = this.rows;
             this.tempFilterData = this.rows;
+            console.log(this.rows)
         }, 450);
       } else {
           this.data = this.ListarConex;

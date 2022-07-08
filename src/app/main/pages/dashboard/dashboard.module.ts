@@ -7,9 +7,6 @@ import { ContentHeaderModule } from 'app/layout/components/content-header/conten
 
 //  Code Mirror 
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
-import 'codemirror/mode/javascript/javascript';
-import 'codemirror/mode/markdown/markdown'
-
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
